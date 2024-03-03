@@ -1,0 +1,345 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap");
+
+/*
+
+font-family: 'Josefin Sans', sans-serif;
+font-weights: 300, 400 & 600
+
+*/
+
+/* Very good practice to do this */
+:root {
+	--Red: hsl(0, 36%, 70%);
+	--Soft-Red: hsl(0, 93%, 68%);
+	--Dark-Red: hsl(0, 6%, 24%);
+	--grad1: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+	--grad2: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+}
+
+/*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
+
+/* Use "*" to select all items. This improves readability and shortens the code */
+/* By the way, I eliminated "font-weight: normal" and "font-size: 100%" because it is not necessary to insert it, this setting is already default in browsers */
+
+* {
+	/* Putting this at the beginning of each CSS document is enough, everything else is not necessary */
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+
+}
+
+ul {
+	list-style: none;
+}
+
+/* This is not necessary since it is declared in "*" */
+/* "button,
+input,
+select {
+	margin: 0;"
+} */
+
+img{
+	max-width: 100%;
+}
+
+
+/* CUSTOM CSS - Mobile-First Approach: 375px */
+
+body {
+	min-height: 100vh;
+	font-family: "Josefin Sans", sans-serif;
+	font-size: 1rem; /*16px*/
+	font-weight: 300;
+	display: grid;
+	grid-template-rows: max-content;
+	grid-template-areas:
+		"header"
+		"section"
+		"main";
+}
+
+#header {
+	grid-area: header;
+	height: fit-content;
+	padding: 1.8rem;
+}
+
+#header__logo {
+	width: 6.5rem;
+}
+
+#mobile-image {
+	grid-row: 1/2;
+	height: 16rem;
+	grid-area: section;
+	background-image: url("/images/hero-mobile.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	object-fit: cover;
+}
+
+main {
+	grid-area: main;
+	justify-items: center;
+	padding: 3.8rem 1.6rem 4rem;
+	text-align: center;
+}
+
+#content__title {
+	font-size: 2.8rem;
+	font-weight: 300;
+	line-height: 2.8rem;
+	color: var(--Red);
+	letter-spacing: 0.5rem;
+	text-transform: uppercase;
+}
+
+#title__dark-text {
+	font-weight: 400;
+	color: var(--Dark-Red);
+}
+
+#content__welcome {
+	font-size: 0.9rem;
+	color: var(--Red);
+	font-weight: 400;
+	line-height: 1.4rem;
+	margin: 1rem 0 2rem;
+}
+
+#content__form-container {
+	width: 100%;
+}
+
+#form-container__form {
+	position: relative;
+	width: 100%;
+	display: flex;
+}
+
+#form__email {
+	outline: none;
+	width: 100%;
+	height: 2rem;
+	border-radius: 1.6rem;
+	padding: 1.6rem 1.4rem;
+	border: 1.4px solid var(--Red);
+	background: transparent;
+	opacity: 0.7;
+}
+
+#form__email::placeholder {
+	font-family: "Josefin Sans", sans-serif;
+	color: var(--Red);
+	font-weight: 400;
+}
+
+#form__submit-button {
+	z-index: 1;
+	border: none;
+	height: 3.3rem;
+	width: 4.2rem;
+	margin-left: -3rem;
+	border-radius: 2rem;
+	background-image: var(--grad2);
+	cursor: pointer;
+	box-shadow: 0px 15px 20px 0px #c66e6e3f;
+}
+
+#form__submit-button:hover {
+	background-color: hsl(0, 36%, 84%);
+	background-image: none;
+}
+
+#form__errorImage {
+	position: absolute;
+	top: 50%;
+	right: 5rem;
+	transform: translateY(-50%);
+	height: 1.2rem;
+	width: 1.2rem;
+}
+.inputError{
+	border: 2px solid hsl(0, 93%, 68%);
+}
+.errorText{
+	color: hsl(0, 93%, 68%);
+}
+.displayBlock{
+	display: block;
+}
+.displayNone{
+	display: none;
+}
+
+.inputSuccess{
+	border: 2px solid hsl(0, 36%, 70%);
+}
+.successText{
+	color: hsl(0, 36%, 70%);
+}
+
+/* -- MEDIA QUERIES -- */
+
+@media (min-width: 500px) {
+	main {
+		/*  The problem of decentralized elements is fixed(padding deleted) */ 
+		display: grid;
+		justify-items: center;
+		align-content: center;
+	}
+
+	#mobile-image {
+		height: 20rem;
+	}
+
+	#content {
+		width: 70%;
+	}
+	
+
+	#form__email {
+		width: 100%;
+	}
+}
+
+@media (min-width: 900px) {
+	body {
+		min-height: 100vh;
+		grid-template-columns: 1fr 1fr;
+		grid-template-areas:
+			"header section"
+			"main section";
+	}
+
+	#header {
+		padding: 1.8rem 3.6rem;
+	}
+
+	#mobile-image {
+		height: 100%;
+		width: 100%;
+		background-image: url("/images/hero-desktop.jpg");
+		background-repeat: no-repeat;
+		background-size: cover;
+		object-fit: cover;
+	}
+
+	#content {
+		width: 85%;
+		max-width: 40rem;
+		text-align: left;
+	}
+
+	#form-container__form {
+		padding-left: 1.8rem;
+	}
+}
+
+@media (min-width: 1080px) {
+	body {
+		grid-template-columns: 1.5fr 1fr;
+	}
+
+	#header,
+	main {
+		background-image: url("/images/bg-pattern-desktop.svg");
+		background-repeat: no-repeat;
+		object-fit: cover;
+		background-size: cover;
+	}
+
+	main {
+		padding-left: 4.2rem;
+	}
+
+	#header {
+		padding: 1.8rem 4.2rem;
+	}
+
+	.logo {
+		width: 7.5rem;
+	}
+
+	#content__title {
+		font-size: 4.8rem;
+		line-height: 4.8rem;
+	}
+
+	p {
+		font-size: 1rem;
+	}
+}
+
+@media (min-width: 1200px) {
+	#header {
+		padding: 1.8rem 4.5rem;
+	}
+
+	main {
+		padding-left: 4.5rem;
+	}
+
+	#header__logo {
+		width: 10rem;
+	}
+
+	#content {
+		width: 73%;
+	}
+
+	#title__dark-text {
+		font-weight: 600;
+		letter-spacing: 1rem;
+	}
+
+	p {
+		font-size: 1.12rem;
+		line-height: 1.8rem;
+		max-width: 30rem;
+	}
+
+	#content__form-container {
+		justify-content: left;
+	}
+
+	#form__email {
+		height: 4rem;
+		border-radius: 2rem;
+		max-width: 28rem;
+	}
+
+	#form__submit-button {
+		height: 4rem;
+		width: 7rem;
+	}
+
+	#form__errorImage {
+		right: 25%;
+	}
+}
+
+@media (min-width: 1400px) {
+	#header {
+		padding: 4rem 5.2rem 1.8rem;
+	}
+	#header__logo {
+		width: 11.5rem;
+	}
+	main {
+		padding-left: 5.2rem;
+	}
+
+	#form__email {
+		padding: 1.6rem 2.4rem;
+	}
+	#form__email::placeholder {
+		font-size: 1rem;
+	}
+
+	#form-container__form {
+		padding: 1.5rem;
+	}
+}

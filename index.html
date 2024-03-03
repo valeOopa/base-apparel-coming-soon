@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="/styles.css">
+  
+  <title>Frontend Mentor | Base Apparel coming soon page</title>
+
+</head>
+<body>
+  <header id="header">
+    <img src="/images/logo.svg" id="header__logo" alt="logo">
+  </header>
+  <!-- I removed an unnecessary <section> -->
+  <!-- Use some methodology to name classes or ids. For example, the BEM methodology:
+      parent__child
+      parent__child--modifier 
+    In this code you can apply it, it makes it easier to style the web page
+    -->
+    <section id="mobile-image"></section>
+  <main>
+    <div id="content">
+      <h1 id="content__title">We're <span id="title__dark-text">coming soon</span></h1>
+      <p id="content__welcome">Hello fellow shoppers! We're currently building our new fashion store.
+        Add your email below to stay up-to-date with announcements and our launch deals.</p>
+      <form id="content__form-container" action="example.html" method="POST">
+        <div id="form-container__form">
+          <input type="text" id="form__email" name="email" placeholder="Email Address" autocomplete="off" aria-label="Email Address">
+          <img src="/images/icon-error.svg" class="displayNone" id="form__errorImage" alt="error-icon">
+          <button id="form__submit-button" type="submit"><img src="/images/icon-arrow.svg" alt="arrow-icon"></button>
+        </div>
+  
+        <p id="form-container__result" ></p>
+      </form>
+    </div>
+  </main>
+
+  <script src="/script.js"></script>
+</body>
+</html>
