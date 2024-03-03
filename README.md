@@ -31,7 +31,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [Code Demo](https://your-live-site-url.com)
+- Live Site URL: [Code Demo](https://base-apparel-deepali.netlify.app/)
 
 ## My process
 

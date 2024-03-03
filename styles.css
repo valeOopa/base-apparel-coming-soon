@@ -99,7 +99,6 @@ th {
 body {
 	min-height: 100vh;
 	font-family: "Josefin Sans", sans-serif;
-	min-height: 100vh;
 	font-size: 1rem; /*16px*/
 	font-weight: 300;
 	display: grid;
@@ -172,7 +171,6 @@ form div {
 form input {
 	outline: none;
 	width: 100%;
-	/*width: 18rem;*/
 	height: 2rem;
 	border-radius: 1.6rem;
 	padding: 1.6rem 1.4rem;
@@ -219,8 +217,9 @@ button:hover {
 @media (min-width: 500px) {
 	main {
 		display: grid;
-		justify-items: center;
-		align-items: center;
+		justify-items: start;
+		align-content: center;
+		padding-left: 3.6rem;
 	}
 
 	section {
@@ -260,6 +259,7 @@ button:hover {
 
 	.content {
 		width: 85%;
+		max-width: 40rem;
 		text-align: left;
 	}
 
@@ -279,6 +279,10 @@ button:hover {
 		background-repeat: no-repeat;
 		object-fit: cover;
 		background-size: cover;
+	}
+
+	main {
+		padding-left: 4.2rem;
 	}
 
 	header {
@@ -302,6 +306,10 @@ button:hover {
 @media (min-width: 1200px) {
 	header {
 		padding: 1.8rem 4.5rem;
+	}
+
+	main {
+		padding-left: 4.5rem;
 	}
 
 	.logo {
@@ -346,6 +354,10 @@ button:hover {
 @media (min-width: 1400px) {
 	header {
 		padding: 4rem 5.2rem 1.8rem;
+	}
+
+	main {
+		padding-left: 5.2rem;
 	}
 
 	.logo {
